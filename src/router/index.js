@@ -4,6 +4,11 @@ import HelloWorld from '@/components/HelloWorld'
 import Board from '@/components/Board'
 import ContentDetail from '@/components/ContentDetail'
 import Create from '@/components/Create'
+import Guide1 from '@/components/Guide1'
+import Guide2 from '@/components/Guide2'
+import Guide3 from '@/components/Guide3'
+import Guide4 from '@/components/Guide4'
+import Guide5 from '@/components/Guide5'
 
 Vue.use(Router)
 
@@ -28,6 +33,31 @@ export default new Router({
       path: '/board/free/create/:id?',
       name: 'Create',
       component: Create
+    },
+    {
+      path: '/guide1',
+      name: 'Guide1',
+      component: Guide1
+    },
+    {
+      path: '/guide2',
+      name: 'Guide2',
+      component: Guide2
+    },
+    {
+      path: '/guide3',
+      name: 'Guide3',
+      component: Guide3
+    },
+    {
+      path: '/guide4',
+      name: 'Guide4',
+      component: Guide4
+    },
+    {
+      path: '/guide5',
+      name: 'Guide5',
+      component: Guide5
     },
   ]
 })
