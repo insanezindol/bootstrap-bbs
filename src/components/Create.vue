@@ -22,7 +22,7 @@ export default {
         }
     },
 
-    created() {
+    mounted() {
         if(this.$route.params.id > 0) {
             const id = Number(this.$route.params.id)
             axios.get('/api/notice/resource/' + id).then((response) => {

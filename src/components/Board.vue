@@ -37,24 +37,18 @@ export default {
         }
     },
 
-    created () {
-        this.fetchNotices()
+    mounted() {
+
+        axios.get('/api/notice/resource').then((response) => {
+            this.items = response.data.data
+            this.rows = response.data.data.length
+        }).catch(ex => {
+            console.error('ERROR!!!!! : ', ex)
+        })
+        
     },
 
     methods: {
-
-        fetchNotices: function () {
-            axios({
-                method: 'GET',
-                url: '/api/notice/resource',
-                params: { }
-            }).then(response => {
-                this.items = response.data.data
-                this.rows = response.data.data.length
-            }).catch(ex => {
-                console.error('ERR!!!!! : ', ex)
-            })
-        },
         
         rowClick(item, index, e) {
             this.$router.push({

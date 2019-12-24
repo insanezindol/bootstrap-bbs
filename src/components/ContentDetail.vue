@@ -34,17 +34,8 @@ import axios from 'axios'
 
 export default {
     name: "ContentDetail",
-    data() {
-        const id = Number(this.$route.params.id)
-        axios.get('/api/notice/resource/' + id).then((response) => {
-            this.id = response.data.data.id
-            this.title = response.data.data.title
-            this.contents = response.data.data.contents
-            this.status = response.data.data.status
-            this.regUser = response.data.data.regUser
-            this.regDate = response.data.data.regDate
-        })
-        
+
+    data() {        
         return {
             id: '',
             title: '',
@@ -54,6 +45,21 @@ export default {
             regDate: ''
         }
     },
+
+    mounted() {
+        const id = Number(this.$route.params.id)
+        axios.get('/api/notice/resource/' + id).then((response) => {
+            this.id = response.data.data.id
+            this.title = response.data.data.title
+            this.contents = response.data.data.contents
+            this.status = response.data.data.status
+            this.regUser = response.data.data.regUser
+            this.regDate = response.data.data.regDate
+        }).catch(ex => {
+            console.error('ERROR!!!!! : ', ex)
+        })
+    },
+
     methods: {
         updateData() {
             this.$router.push({
