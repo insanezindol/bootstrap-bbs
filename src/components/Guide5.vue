@@ -83,6 +83,9 @@
             <span>Selected: {{ selected2 }}</span>
         </div>
 
+        <div>&nbsp;</div>
+        <div><a v-bind:href="url_prev">이전으로</a> || <a v-bind:href="url_next">다음으로</a></div>
+
     </div>
 </template>
 <script>
@@ -104,7 +107,9 @@ export default {
                 { text: 'One', value: 'A' },
                 { text: 'Two', value: 'B' },
                 { text: 'Three', value: 'C' }
-            ]
+            ],
+            url_prev: '/#/guide4',
+            url_next: '/#/guide6',
         }
     },
 

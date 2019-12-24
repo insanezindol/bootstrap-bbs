@@ -9,6 +9,7 @@ import Guide2 from '@/components/Guide2'
 import Guide3 from '@/components/Guide3'
 import Guide4 from '@/components/Guide4'
 import Guide5 from '@/components/Guide5'
+import Guide6 from '@/components/Guide6'
 
 Vue.use(Router)
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/guide5',
       name: 'Guide5',
       component: Guide5
+    },
+    {
+      path: '/guide6',
+      name: 'Guide6',
+      component: Guide6
     },
   ]
 })
