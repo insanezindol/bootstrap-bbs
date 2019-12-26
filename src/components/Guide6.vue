@@ -19,6 +19,9 @@
             {{ myNum }}
             <ComponentB v-bind:myNum="myNum" @updateParentNumber="updateParentNumber" />
         </div>
+
+        <div>&nbsp;</div>
+        <div><a v-bind:href="url_prev">이전으로</a> || <a v-bind:href="url_next">다음으로</a></div>
     </div>
 </template>
 <script>
@@ -39,6 +42,8 @@ export default {
             bool_var: true,
             arr_var: ['sean', 'leo', 'noel', 'brian', 'brandon', 'dean'],
             myNum : '10',
+            url_prev: '/#/guide5',
+            url_next: '/#/guide7',
         }
     },
 
